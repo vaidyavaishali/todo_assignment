@@ -1,0 +1,13 @@
+html {
+    scroll-padding-top: 80px; /* Adjust based on your sticky navbar height */
+    scroll-behavior: smooth;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for Webkit browsers */
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none; /* Hide the scrollbar for Internet Explorer */
+    scrollbar-width: none; /* Hide the scrollbar for Firefox */
+  }
+  
