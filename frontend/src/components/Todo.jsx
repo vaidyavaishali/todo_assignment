@@ -12,6 +12,7 @@ const Todo = () => {
     const [error, setError] = useState("");
     const [showModal, setShowModal] = useState(false);
     const API_URL = "https://todo-assignment-ten-phi.vercel.app";
+    // https://todo-assignment-ten-phi.vercel.app/get-all-todos
     //get all todos
     const fetchTodos = async () => {
         try {

@@ -9,9 +9,9 @@ app.use(express.json());
 
 const allowedOrigins = [
     "http://localhost:3000", // Local frontend
-    "https://todo-assignment-frontend-git-main-vaidyavaishalis-projects.vercel.app/" // Vercel frontend
+    "https://todo-assignment-frontend-git-main-vaidyavaishalis-projects.vercel.app" // Vercel frontend
   ];
-  
+//   https://todo-assignment-frontend-git-main-vaidyavaishalis-projects.vercel.app/
   app.use(
     cors({
       origin: (origin, callback) => {
