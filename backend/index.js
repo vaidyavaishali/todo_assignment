@@ -6,13 +6,33 @@ import todoRouter from "./routes/todoRoutes.js";
 
 const app = express();
 app.use(express.json());
-app.use(
+
+const allowedOrigins = [
+    "http://localhost:3000", // Local frontend
+    "https://todo-assignment-loi125vlv-vaidyavaishalis-projects.vercel.app" // Vercel frontend
+  ];
+  
+  app.use(
     cors({
-      origin: "https://localhost:3000", // Front-end origin
-      methods: ['GET', 'POST'], // Allowed methods
-      credentials: true, // Allow cookies or credentials
+      origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error("Not allowed by CORS"));
+        }
+      },
+      methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary methods
+      credentials: true // Allow cookies/auth headers if needed
     })
-  );dotenv.config();
+  );
+  
+// app.use(
+//     cors({
+//       origin: "", // Front-end origin
+//       methods: ['GET', 'POST'], // Allowed methods
+//       credentials: true, // Allow cookies or credentials
+//     })
+//   );dotenv.config();
 
 //connect to mongodb
 mongoose.connect(process.env.mongodb_url).then(() => {
