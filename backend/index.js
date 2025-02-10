@@ -9,7 +9,7 @@ app.use(express.json());
 
 const allowedOrigins = [
     "http://localhost:3000", // Local frontend
-    "https://todo-assignment-loi125vlv-vaidyavaishalis-projects.vercel.app" // Vercel frontend
+    "https://todo-assignment-frontend-git-main-vaidyavaishalis-projects.vercel.app/" // Vercel frontend
   ];
   
   app.use(
