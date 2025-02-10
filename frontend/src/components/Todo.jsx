@@ -11,7 +11,7 @@ const Todo = () => {
     const [darkMode, setDarkMode] = useState(true);
     const [error, setError] = useState("");
     const [showModal, setShowModal] = useState(false);
-    const API_URL = "https://todo-assignment-git-main-vaidyavaishalis-projects.vercel.app";
+    const API_URL = "https://todo-assignment-ten-phi.vercel.app";
     //get all todos
     const fetchTodos = async () => {
         try {
