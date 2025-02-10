@@ -6,8 +6,13 @@ import todoRouter from "./routes/todoRoutes.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
-dotenv.config();
+app.use(
+    cors({
+      origin: "https://localhost:3000", // Front-end origin
+      methods: ['GET', 'POST'], // Allowed methods
+      credentials: true, // Allow cookies or credentials
+    })
+  );dotenv.config();
 
 //connect to mongodb
 mongoose.connect(process.env.mongodb_url).then(() => {
